@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { move, reorder } from '../../components/moveItems/';
 import { getItemStyle, getListStyle } from '../../components/cardData';
 import { FormBtn, Input } from '../../components/addCard';
-// import API from '../../utils/API'
+import API from '../../utils/API'
 
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
@@ -247,14 +247,14 @@ class Board extends Component {
 
   componentDidMount = () => {
     this.setState({
-      contributors: this.props.match.params.title
+      contributors: "this.props.match.params.title"
     })
 
-    // API.renderBoard(2596)
-    //   .then(res => {
-    //     console.log(res.data)
-    //   })
-    //   .catch(err => { console.log(err) })
+    API.renderBoard(2078)
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(err => { console.log(err) })
   }
 
   addCol = (event) => {
